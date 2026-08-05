@@ -1,0 +1,66 @@
+# A solution is a collection of related projects that share same base configuration.
+solution:
+  created-for: CMSIS-Toolbox@2.12.0
+  cdefault:
+
+  # Compilers that can be selected.
+  select-compiler:
+    - compiler: AC6
+    - compiler: CLANG
+    - compiler: GCC
+    - compiler: IAR
+
+  # Miscellaneous toolchain controls directly passed to the tools.
+  misc:
+    - for-compiler: AC6 # change to -gdwarf-4 for debugging using uVision
+      C-CPP:
+        - -gdwarf-5
+      ASM:
+        - -gdwarf-5
+
+  # List the packs that define the device and/or board.
+  packs:
+    - pack: Keil::NUCLEO-H743ZI2_BSP
+    - pack: Keil::STM32H7xx_DFP
+    - pack: ARM::CMSIS
+
+  # List different hardware targets that are used to deploy the solution.
+  target-types:
+    - type: STM32H743ZITx
+      target-set:
+        - set:
+          images:
+            - project-context: SEGGER-SystemView.Debug
+          debugger:
+            name: ST-Link@pyOCD
+            clock: 4000000
+            protocol: swd
+            rtt:
+              - channel:
+                  - number: 0
+                    mode: stdio
+                  - number: 1
+                    mode: systemview-server
+                    port: 19111
+            telnet:
+              - mode: console
+      device: STM32H743ZITx
+      board: NUCLEO-H743ZI2:Rev.E
+      variables:
+        - Board-Layer: $SolutionDir()$/Board/NUCLEO-H743ZI2/Board.clayer.yml
+          copied-from: ${CMSIS_PACK_ROOT}/Keil/NUCLEO-H743ZI2_BSP/1.1.0/Layers/Default/Board.clayer.yml
+
+  # List of different build configurations.
+  build-types:
+    - type: Debug
+      debug: on
+      optimize: none
+
+    - type: Release
+      debug: off
+      optimize: balanced
+
+  # List related projects.
+  projects:
+    - project: ./SEGGER-SystemView/SEGGER-SystemView.cproject.yml
+  compiler: AC6
