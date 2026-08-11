@@ -27,8 +27,23 @@ solution:
   # List different hardware targets that are used to deploy the solution.
   target-types:
     - type: STM32H743ZITx
-      target-set:
-        - set:
+      target-set: 
+        - set: systemview-file
+          images:
+            - project-context: SEGGER-SystemView.Debug
+          debugger:
+            name: ST-Link@pyOCD
+            clock: 4000000
+            protocol: swd
+            rtt:
+              - channel:
+                  - number: 0
+                    mode: stdio
+                  - number: 1
+                    mode: systemview
+            telnet:
+              - mode: console
+        - set: systemview-server
           images:
             - project-context: SEGGER-SystemView.Debug
           debugger:

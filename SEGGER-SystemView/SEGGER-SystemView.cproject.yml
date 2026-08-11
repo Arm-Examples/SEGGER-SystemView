@@ -3,9 +3,9 @@ project:
 
   # List the packs used in the project.
   packs:
-    - pack: ARM::CMSIS-FreeRTOS
-    - pack: SEGGER::SystemView
-    - pack: SEGGER::RTT
+    - pack: ARM::CMSIS-FreeRTOS@^11.0.1
+    - pack: SEGGER::SystemView@^4.12.0
+    - pack: SEGGER::RTT@^8.58.0
 
   # List connections used to identify compatible software layers.
   connections:

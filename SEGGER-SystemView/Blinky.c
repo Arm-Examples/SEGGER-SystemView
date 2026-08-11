@@ -76,9 +76,10 @@ static __NO_RETURN void thread_LED(void *argument) {
 static __NO_RETURN void thread_Button(void *argument) {
   uint32_t last = 0U;
   uint32_t state;
+  uint8_t count;
 
   (void)argument;
-
+  count = 0U;
   for (;;) {
     /* Get button state */
     state = vioGetSignal(vioBUTTON0);
@@ -86,6 +87,13 @@ static __NO_RETURN void thread_Button(void *argument) {
       if (state == 1U) {
         /* Button pressed, notify LED thread */
         osThreadFlagsSet(tid_LED, 1U);
+        if(2U > count) {
+          count++;
+          if(2U == count) {
+            putchar( '\x04' ) ;  // Send EOT to terminate RTT session
+            fflush(stdout) ;
+          }
+        }
       }
       last = state;
     }
@@ -99,7 +107,7 @@ static __NO_RETURN void thread_Button(void *argument) {
 __NO_RETURN void app_main_thread(void *argument) {
   (void) argument;
 
-  printf("Blinky example\n");
+  printf("SEGGER-SystemView example\n");
 
   /* Create LED and Button threads */
   tid_LED    = osThreadNew(thread_LED, NULL, &thread_attr_LED);
