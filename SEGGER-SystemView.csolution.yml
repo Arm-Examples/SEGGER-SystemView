@@ -27,7 +27,7 @@ solution:
   # List different hardware targets that are used to deploy the solution.
   target-types:
     - type: STM32H743ZITx
-      target-set: 
+      target-set:
         - set: systemview-file
           images:
             - project-context: SEGGER-SystemView.Debug
