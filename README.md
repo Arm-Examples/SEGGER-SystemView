@@ -3,7 +3,7 @@ This example project shows how to use SEGGER SystemView with pyOCD.
 
 It streams FreeRTOS and system activity to the SEGGER SystemView application for graphical inspection:
 
-![SystemView GUI](Segger-SystemView/SystemView_Screenshot.png "SystemView")
+![SystemView GUI](/assets/images/SystemView_Screenshot.png "SystemView")
 
 pyOCD reads RTT data directly from target memory.
 
