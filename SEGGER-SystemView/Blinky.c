@@ -87,12 +87,11 @@ static __NO_RETURN void thread_Button(void *argument) {
       if (state == 1U) {
         /* Button pressed, notify LED thread */
         osThreadFlagsSet(tid_LED, 1U);
-        if(2U > count) {
-          count++;
-          if(2U == count) {
-            putchar( '\x04' ) ;  // Send EOT to terminate RTT session
-            fflush(stdout) ;
-          }
+        count++;
+        SEGGER_SYSVIEW_PrintfHost("Button pressed %d times", count);
+        if(10U == count) {
+          putchar( '\x04' ) ;  // Send EOT to terminate RTT session
+          fflush(stdout) ;
         }
       }
       last = state;

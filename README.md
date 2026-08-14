@@ -20,16 +20,16 @@ This example uses the NUCLEO-H743ZI2 board. The same approach also works with ot
 4. Connect the board to the PC.
 5. Build and load the project with the CMSIS View
    [action buttons](https://github.com/Open-CMSIS-Pack/vscode-cmsis-solution#action-buttons).
-6. Press the User button on the board twice. This ends the pyOCD session and the streaming.
+6. Press the User button on the board 10 times. This ends the pyOCD session and the streaming.
 7. In the SystemView application, open the file `.\out\SEGGER-SystemView+STM32H743ZITx.core0.ch1.bin`.
 8. Inspect the system and RTOS activity.
 
 ## Requirements
 To use SEGGER SystemView as shown in this example in your own project, install the following additional packs:
 - `Segger::RTT` pack, version 8.58.0 or later
-- `Segger::SystemView` pack version 4.12.0 or newer
+- `Segger::SystemView` pack version 4.12.0 or later
 - `ARM::CMSIS-Compiler` pack, version 2.3.0 or later
-- `ARM::CMSIS-FreeRTOS` pack version 11.0.1 or newer
+- `ARM::CMSIS-FreeRTOS` pack version 11.0.1 or later
 
 To view the data captured from the running application, the Segger [SystemView application](https://www.segger.com/products/development-tools/systemview/) is required.
 
@@ -49,6 +49,10 @@ To view the data captured from the running application, the Segger [SystemView a
   - Start streaming before the RTOS initialization:
     ```
     traceSTART();
+    ```
+  - Send messages to the SystemView application:
+    ```
+    SEGGER_SYSVIEW_PrintfHost("Button pressed %d times", count);
     ```
 3. Solution and Project Configuration
   - In the `csolution.yml` file, add the following [`rtt:`](https://open-cmsis-pack.github.io/cmsis-toolbox/pyOCD-Debugger/#rtt) node under the [`debugger:`](https://open-cmsis-pack.github.io/cmsis-toolbox/pyOCD-Debugger/#debugger) node:
