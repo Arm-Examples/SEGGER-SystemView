@@ -20,9 +20,11 @@ This example uses the NUCLEO-H743ZI2 board. The same approach also works with ot
 4. Connect the board to the PC.
 5. Build and load the project with the CMSIS View
    [action buttons](https://github.com/Open-CMSIS-Pack/vscode-cmsis-solution#action-buttons).
-6. Press the User button on the board 10 times. This ends the pyOCD session and the streaming.
-7. In the SystemView application, open the file `.\out\SEGGER-SystemView+STM32H743ZITx.core0.ch1.bin`.
-8. Inspect the system and RTOS activity.
+6. Press the User button on the board a number of times. This sends a SystemView message each time.
+7. Stop Running via the CMSIS View
+   [action buttons](https://github.com/Open-CMSIS-Pack/vscode-cmsis-solution#action-buttons).
+8. In the SystemView application, open the file `.\out\SEGGER-SystemView+STM32H743ZITx.core0.ch1.bin`.
+9. Inspect the system and RTOS activity.
 
 ## Requirements
 To use SEGGER SystemView as shown in this example in your own project, install the following additional packs:
