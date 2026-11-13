@@ -21,7 +21,7 @@ activity with SEGGER SystemView and pyOCD on an STMicroelectronics
 4. Press the blue user button on the board several times to generate SystemView
    messages, then stop the application with the CMSIS view action buttons.
 5. Start the SEGGER SystemView Application and open
-   `./out/SEGGER-SystemView+STM32H743ZITx.core0.ch1.bin`.
+   `./out/SEGGER-SystemView.SVDat`.
 6. Use SEGGER SystemView to inspect the recorded system and FreeRTOS activity.
 
 ## About SEGGER SystemView

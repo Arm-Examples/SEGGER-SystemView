@@ -41,6 +41,8 @@ solution:
                     mode: stdio
                   - number: 1
                     mode: systemview
+            systemview:
+              file: ./out/SEGGER-SystemView.SVDat
             telnet:
               - mode: console
         - set: systemview-server
