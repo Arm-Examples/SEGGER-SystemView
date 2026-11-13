@@ -1,4 +1,4 @@
-# Board: STMicroelectronics [NUCLEO-H743ZI2](https://www.st.com/en/evaluation-tools/nucleo-h743zi.html)
+# Board: STMicroelectronics [NUCLEO-H743ZI2][board]
 
 ## Default Board Layer
 
@@ -45,3 +45,5 @@ Reference to [Arduino UNO connector description](https://open-cmsis-pack.github.
 | vioLED0               | LED red     (LD3)
 | vioLED1               | LED green   (LD1)
 | vioLED2               | LED yellow  (LD2)
+
+[board]: https://www.keil.arm.com/boards/stmicroelectronics-nucleo-h743zi2-reve-a8d98ff/guide/
