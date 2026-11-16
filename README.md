@@ -19,10 +19,11 @@ activity with SEGGER SystemView and pyOCD on an STMicroelectronics
    [action buttons](https://github.com/Open-CMSIS-Pack/vscode-cmsis-solution#action-buttons)
    to build, load, and run the project with the **systemview-file** target set.
 4. Press the blue user button on the board several times to generate SystemView
-   messages, then stop the application with the CMSIS view action buttons.
-5. Start the SEGGER SystemView Application and open
-   `./out/SEGGER-SystemView+STM32H743ZITx.core0.ch1.bin`.
-6. Use SEGGER SystemView to inspect the recorded system and FreeRTOS activity.
+   messages.
+5. Stop the application and the Debug Session with the CMSIS Debugger [Debug Toolbar](https://github.com/Open-CMSIS-Pack/vscode-cmsis-debugger#debugger-user-interface).
+6. Start the SEGGER SystemView Application and open
+   `./out/SEGGER-SystemView+STM32H743ZITx.SVDat`.
+7. Use SEGGER SystemView to inspect the recorded system and FreeRTOS activity.
 
 ## About SEGGER SystemView
 
