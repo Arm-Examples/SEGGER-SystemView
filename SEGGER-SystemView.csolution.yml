@@ -41,7 +41,7 @@ solution:
                     mode: stdio
                   - number: 1
                     mode: systemview
-            telnet:
+            stdio:
               - mode: console
         - set: systemview-server
           images:
@@ -57,7 +57,7 @@ solution:
                   - number: 1
                     mode: systemview-server
                     port: 19111
-            telnet:
+            stdio:
               - mode: console
       device: STM32H743ZITx
       board: NUCLEO-H743ZI2:Rev.E
